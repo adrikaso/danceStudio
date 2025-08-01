@@ -1,5 +1,7 @@
 const classService = require('../services/classService');
 
+
+
 async function getAllClasses(req, res) {
     try {
         const classes = await classService.getAllClasses();

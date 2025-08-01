@@ -1,8 +1,11 @@
 const classRepository = require('../repositories/classRepository');
+const { DAYS_LABELS } = require('../utils/dayUtils');
 
 async function getAllClasses(){
     try {
-        return await classRepository.getAllClasses();
+        const classes = await classRepository.getAllClasses();
+        return classes.map(classData => addDayName(classData));
+        
     } catch (error) {
         throw new Error("Error in getAllClasses: " + error.message);
     }
@@ -10,10 +13,25 @@ async function getAllClasses(){
 
 async function getClassById(id) {
     try {
-        return await classRepository.getClassById(id);
+        const classData = await classRepository.getClassById(id);
+        return addDayName(classData);
     } catch (error) {
         throw new Error("Error in getClassById: " + error.message);
     }
+}
+
+function addDayName(classData) {
+    if (!classData) return null;
+    
+    // Opción 1: Usando toObject()
+    const classObj = classData.toObject();
+    return {
+        ...classObj,
+        schedule: {
+            ...classObj.schedule,
+            dayName: DAYS_LABELS[classObj.schedule.dayOfWeek]
+        }
+    };
 }
 
 async function createClass(classData) {

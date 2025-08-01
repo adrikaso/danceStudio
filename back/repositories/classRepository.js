@@ -1,44 +1,9 @@
 const Class = require("../models/classModel");
 
-const getAllClasses = async () => {
-    try {
-        return await Class.find().populate('teacher').populate('tier');
-    } catch (error) {
-        throw new Error("Error fetching classes: " + error.message);
-    }
-}
-
-const getClassById = async (id) => {
-    try {
-        return await Class.findById(id).populate('teacher').populate('tier');
-    } catch (error) {
-        throw new Error("Error fetching class by ID: " + error.message);
-    }
-}
-
-const createClass = async (classData) => {
-    try {
-        const classInstance = new Class(classData);
-        return await classInstance.save();
-    } catch (error) {
-        throw new Error("Error creating class: " + error.message);
-    }
-}
-
-const updateClass = async (id, classData) => {
-    try {
-        return await Class.findByIdAndUpdate(id, classData, { new: true }).populate('teacher').populate('tier');
-    } catch (error) {
-        throw new Error("Error updating class: " + error.message);
-    }
-}
-
-const deleteClass = async (id) => {
-    try {
-        return await Class.findByIdAndDelete(id);
-    } catch (error) {
-        throw new Error("Error deleting class: " + error.message);
-    }
-}    
+const getAllClasses = async () => await Class.find();
+const getClassById = async (id) => await Class.findById(id);
+const createClass = async (classData) => await Class.create(classData);
+const updateClass = async (id, classData) => await Class.findByIdAndUpdate(id, classData, { new: true });
+const deleteClass = async (id) => await Class.findByIdAndDelete(id);
 
 module.exports = { getAllClasses, getClassById, createClass, updateClass, deleteClass };
