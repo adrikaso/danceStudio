@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { start } = require('repl');
 
 const classSchema = new mongoose.Schema({
     name: String,
