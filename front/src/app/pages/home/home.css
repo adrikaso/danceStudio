@@ -1,0 +1,251 @@
+.home-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.hero-content {
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    padding: 0 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('/images/ensayo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: grayscale(0.3) blur(2px);
+    z-index: 0;
+}
+
+.main-text {
+    max-width: 800px;
+    z-index: 1;
+    position: relative;
+    padding-top: 80px;
+
+}
+
+.main-text h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.dynamic-text-container {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.dynamic-text-container p {
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.dynamic-text {
+    font-weight: bold;
+    color: #d29bfd;
+    white-space: nowrap;
+}
+
+.cursor {
+    display: inline-block;
+    color: #d29bfd;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+.bottom-section {
+    height: 50vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.4)
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.bottom-section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.bottom-section p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(210, 155, 253, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    background: rgba(210, 155, 253, 0.5)
+}
+
+.scroll-indicator span {
+    font-size: 1.5rem;
+    color: #d29bfd;
+    font-weight: bold;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-text {
+        padding-top: 70px;
+    }
+
+    .hero-content {
+        height: 65vh;
+        padding: 0 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .bottom-section {
+        height: 35vh;
+    }
+
+    .main-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .dynamic-text-container {
+        font-size: 1.5rem;
+    }
+
+    .bottom-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .bottom-section p {
+        font-size: 1rem;
+    }
+}
+
+
+.services-section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1100px;
+  justify-content: center;
+}
+
+.service-card {
+  background: #000;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 20px;
+}
+
+.service-content h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.btn-info {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #d29bfd;
+  color: #d29bfd;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+  background: #d29bfd;
+  color: #000;
+}

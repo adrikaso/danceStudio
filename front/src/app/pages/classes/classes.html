@@ -1,0 +1,35 @@
+<table class="schedule-table">
+  <thead>
+    <tr>
+      <th>Horario</th>
+      <th *ngFor="let day of days">
+        {{ ['Lunes','Martes','Miércoles','Jueves','Viernes'][day-1] }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hour of hours">
+      <td>{{ hour }}</td>
+      <ng-container *ngFor="let day of days">
+        <ng-container *ngIf="getClassesStartingAt(day, hour) as clases">
+          <td *ngIf="clases.length > 0" [attr.rowspan]="getClassDurationInRows(clases[0])">
+            <div *ngFor="let clase of clases; let i = index">
+              <div class="class-info">
+              <p class="class-name">{{ clase.name }}</p><br />
+              <p class="class-time">{{ clase.schedule.startTime }} - {{ clase.schedule.endTime }}</p><br />
+              <p class="class-instructor">{{ clase.teacher?.name }} {{ clase.teacher?.lastName }}</p><br />
+              <p class="class-level">Nivel: {{ clase.tier?.name }}</p>
+
+              </div>
+              <hr *ngIf="clases.length > 1 && i < clases.length - 1" />
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container *ngIf="getClassesStartingAt(day, hour).length === 0 && !isCellOccupied(day, hour)">
+          <td></td>
+        </ng-container>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>
