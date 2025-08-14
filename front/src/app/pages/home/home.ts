@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class Home implements OnInit {
-  words = ['urbano', 'jazz dance', 'contemporáneo', 'k-pop', 'hip hop'];
+  words = ['Urbano', 'Jazz dance', 'Contemporáneo', 'K-pop', 'Hip hop', 'Ballet', 'Reggaetón'];
   currentText = '';
   wordIndex = 0;
   charIndex = 0;
   isDeleting = false;
-  typingSpeed = 150; // milisegundos entre letras
+  typingSpeed = 130; // milisegundos entre letras
 
   ngOnInit(): void {
     this.typeEffect();

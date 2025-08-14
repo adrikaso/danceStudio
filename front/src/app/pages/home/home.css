@@ -16,9 +16,10 @@
     align-items: center;
     justify-content: flex-start;
     color: white;
-    padding: 0 50px;
     position: relative;
     overflow: hidden;
+    z-index: 1;
+
 }
 
 .home-section::before {
@@ -29,34 +30,36 @@
     right: 0;
     bottom: 0;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('/images/ensayo.jpg');
+        url('/images/asdsd.webp');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    filter: grayscale(0.3) blur(2px);
+    /* background-attachment: fixed; */
+    filter: grayscale(0.3) blur(3px);
     z-index: 0;
 }
 
 .main-text {
-    max-width: 800px;
+
+    width: 100%;
     z-index: 1;
     position: relative;
     padding-top: 80px;
-
+    text-align: left;
+    margin-inline: 0 !important;
 }
 
 .main-text h1 {
     font-size: 4rem;
     font-weight: 900;
-    margin-bottom: 30px;
-    line-height: 1.1;
-    letter-spacing: -1px;
+    margin-bottom: 10px;
+    line-height: 0.8;
+    letter-spacing: -3px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .dynamic-text-container {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .dynamic-text-container p {
@@ -65,9 +68,10 @@
 }
 
 .dynamic-text {
-    font-weight: bold;
+    font-weight: 800;
     color: #d29bfd;
     white-space: nowrap;
+    text-transform: uppercase;
 }
 
 .cursor {
