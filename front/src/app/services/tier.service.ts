@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ClassService {
-    private baseUrl = 'http://localhost:3000/classes';
+export class TierService {
+    private baseUrl = 'http://localhost:3000/tiers';
 
     constructor(private http: HttpClient) {}
 
@@ -19,12 +19,12 @@ export class ClassService {
     }
 
 
-    create(classData: any): Observable<any> {
-      return this.http.post(`${this.baseUrl}/create`, classData);
+    create(tierData: any): Observable<any> {
+      return this.http.post(`${this.baseUrl}/create`, tierData);
     }
 
-    update(id: string, classData: any): Observable<any> {
-      return this.http.put(`${this.baseUrl}/update/${id}`, classData);
+    update(id: string, tierData: any): Observable<any> {
+      return this.http.put(`${this.baseUrl}/update/${id}`, tierData);
     }
 
     delete(id: string): Observable<any> {

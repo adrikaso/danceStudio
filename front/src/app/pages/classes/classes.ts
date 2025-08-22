@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClassService } from '../../services/class.service';
 import { CommonModule } from '@angular/common';
-import { Class } from '../../models/class.model';
+import { Class } from '../../interfaces/class.interface';
 
 @Component({
   selector: 'app-classes',
