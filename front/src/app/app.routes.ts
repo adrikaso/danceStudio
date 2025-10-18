@@ -20,9 +20,8 @@ export const routes: Routes = [
     component: AdminLayoutComponent,
     children: [
       //{ path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', loadComponent: () => import('./pages/admin/dashboard/dashboard').then(m => m.DashboardComponent) },
+      { path: 'dashboard', loadComponent: () => import('./admin/dashboard/dashboard').then(m => m.DashboardComponent) },
       // otras páginas del admin
     ]
   }
 ];
-

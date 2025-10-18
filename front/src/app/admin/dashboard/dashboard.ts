@@ -1,12 +1,11 @@
-// dashboard.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'
 import { ClassService } from '@services/class.service';
 import { TeacherService } from '@services/teacher.service';
 import { TierService } from '@services/tier.service';
-import { Class } from '../../../interfaces/class.interface';
-import { Teacher } from '../../../interfaces/teacher.interface';
-import { Tier } from '../../../interfaces/tier.interface';
+import { Class } from '../../interfaces/class.interface';
+import { Teacher } from '../../interfaces/teacher.interface';
+import { Tier } from '../../interfaces/tier.interface';
 import { FormsModule } from '@angular/forms';
 
 @Component({
